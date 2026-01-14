@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1494cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.card {
+    background: #f2f2f7;
+    width: 1100px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.image-container {
+    width: 100%;
+    height: 400px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    padding: 30px;
+}
+
+.name {
+    font-size: 22px;
+    letter-spacing: 5px;
+    color: #040b19;
+    font-weight: 300;
+}
+
+.title {
+    font-size: 10px;
+    color: #0a0a09;
+    letter-spacing: 3px;
+    margin: 10px 0 20px 0;
+}
+
+.divider {
+    height: 1px;
+    width: 40px;
+    background-color: #1c1919;
+    margin: 0 auto 20px auto;
+}
+
+.description {
+    font-size: 15px;
+    color: #151515;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.insta-button {
+    display: block;
+    background-color: #0d6d5d;
+    color: #0e0101;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.insta-button:hover {
+    background-color: #375a92;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+.card {
+    position: relative; /* חובה כדי שהכפתור ידע לאן להיצמד */
+}
+
+.profile-side-button {
+    position: absolute;
+    right: 0;           /* נצמד לקצה הימני */
+    top: 150%;           /* יורד לאמצע הגובה */
+    transform: translateY(-50%); /* ממרכז אותו בדיוק */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px 0 0 5px; /* עיגול רק בצד הפנימי */
+    font-size: 12px;
+    z-index: 10;        /* מוודא שהוא מעל התמונה */
+}
