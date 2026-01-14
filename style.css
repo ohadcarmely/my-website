@@ -1,107 +1,104 @@
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #1494cb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-.card {
-    background: #f2f2f7;
-    width: 1100px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.image-container {
-    width: 100%;
-    height: 400px;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.content {
-    padding: 30px;
-}
-
-.name {
-    font-size: 22px;
-    letter-spacing: 5px;
-    color: #040b19;
-    font-weight: 300;
-}
-
-.title {
-    font-size: 10px;
-    color: #0a0a09;
-    letter-spacing: 3px;
-    margin: 10px 0 20px 0;
-}
-
-.divider {
-    height: 1px;
-    width: 40px;
-    background-color: #1c1919;
-    margin: 0 auto 20px auto;
-}
-
-.description {
-    font-size: 15px;
-    color: #151515;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-
-.insta-button {
-    display: block;
-    background-color: #0d6d5d;
-    color: #0e0101;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.insta-button:hover {
-    background-color: #375a92;
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-.card {
-    position: relative; /* חובה כדי שהכפתור ידע לאן להיצמד */
-}
-
-.profile-side-button {
-    position: absolute;
-    right: 0;           /* נצמד לקצה הימני */
-    top: 150%;           /* יורד לאמצע הגובה */
-    transform: translateY(-50%); /* ממרכז אותו בדיוק */
-    background-color: #007bff;
+    font-family: 'Assistant', sans-serif;
+    background-color: #121212;
     color: white;
-    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- שקופית עליונה --- */
+.top-section {
+    padding: 30px 20px;
+}
+
+.main-card {
+    width: 400px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7); /* צל חזק יותר */
+    border: 1px solid #333;
+}
+
+/* עיצוב שם יוקרתי ומשודרג */
+.main-name {
+    font-family: 'Playfair Display', serif; /* פונט חדש */
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 5px;
+    letter-spacing: 2px; /* ריווח בין אותיות */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* צללית עדינה לטקסט */
+}
+
+/* --- שורה תחתונה --- */
+.bottom-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: stretch; /* מותח את הכרטיסים לאותו גובה בדיוק! */
+    flex-wrap: wrap;
+}
+
+.small-card {
+    width: 200px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* מפזר את התוכן יפה */
+}
+
+/* --- כפתורים ואנימציות --- */
+.buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.action-button, .insta-button, .whatsapp-btn {
+    display: block;
+    padding: 12px 10px;
     text-decoration: none;
-    border-radius: 5px 0 0 5px; /* עיגול רק בצד הפנימי */
-    font-size: 12px;
-    z-index: 10;        /* מוודא שהוא מעל התמונה */
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.9rem; /* הגדלתי את הכתב */
+    color: white;
+    transition: all 0.3s ease; /* גורם לתנועה להיות חלקה */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.action-button { background: #333; border: 1px solid #555; }
+.insta-button { background: linear-gradient(45deg, #f09433, #bc1888); }
+.whatsapp-btn { background: #25d366; }
+
+/* האנימציה - כשנוגעים בכפתור */
+.action-button:hover, .insta-button:hover, .whatsapp-btn:hover {
+    transform: translateY(-5px) scale(1.05); /* זז למעלה וגדל קצת */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* הצל גדל */
+    filter: brightness(1.1); /* נהיה קצת יותר מואר */
+}
+
+/* --- עיצובים כלליים --- */
+.section-title { font-family: 'Cinzel', serif; font-size: 1.1rem; color: #d4af37; margin-bottom: 10px; }
+.image-container img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid #d4af37; object-fit: cover; }
+.divider { height: 1px; background: linear-gradient(to right, transparent, #d4af37, transparent); width: 80%; margin: 15px auto; }
+.description { font-size: 0.95rem; color: #ccc; line-height: 1.5; }
+.title { color: #d4af37; letter-spacing: 3px; font-size: 0.8rem; font-weight: bold; }
+
+/* מובייל */
+@media (max-width: 450px) {
+    .main-card { width: 90vw; }
+    .bottom-row { flex-direction: column; align-items: center; }
+    .small-card { width: 280px; min-height: auto; }
 }
